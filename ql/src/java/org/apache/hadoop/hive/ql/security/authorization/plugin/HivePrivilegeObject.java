@@ -165,6 +165,12 @@ public class HivePrivilegeObject implements Comparable<HivePrivilegeObject> {
   }
 
   public HivePrivilegeObject(HivePrivilegeObjectType type, String dbname, String objectName,
+                             List<String> partKeys, List<String> columns, HivePrivObjectActionType actionType,
+                             List<String> commandParams){
+    this(type, dbname, objectName, partKeys, columns, actionType, commandParams,null);
+  }
+
+  public HivePrivilegeObject(HivePrivilegeObjectType type, String dbname, String objectName,
       List<String> partKeys, List<String> columns, HivePrivObjectActionType actionType,
       List<String> commandParams, String className) {
     this.type = type;
